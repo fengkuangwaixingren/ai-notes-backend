@@ -101,8 +101,23 @@
             <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
             <version>1.0.0.2</version>
         </dependency>
-    </dependencies>
 
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>aliyun-central</id>
+            <name>aliyun central</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </repository>
+        <!-- 保留原有的 spring-milestones 等仓库 -->
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun-central</id>
+            <name>aliyun central</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </pluginRepository>
+    </pluginRepositories>
     <build>
         <plugins>
             <plugin>
