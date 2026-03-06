@@ -1,5 +1,5 @@
 # 第一阶段：构建阶段
-FROM maven:3.8.4-openjdk-17-slim AS build
+FROM maven:3.8.4-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # 复制 pom.xml 并下载依赖（利用 Docker 缓存）
@@ -11,7 +11,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 第二阶段：运行阶段
-FROM openjdk:21-jdk-slim
+FROM eclipse-temurin:21-jdk-alpine
 WORKDIR /app
 
 # 从构建阶段复制生成的 jar 文件
